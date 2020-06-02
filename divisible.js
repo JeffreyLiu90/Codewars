@@ -1,11 +1,19 @@
 // Create a function that checks if a number n is divisible by two numbers x AND y. All inputs are positive, non-zero digits.
 
+//if statements
+
 // function isDivisible(n, x, y) {
 // if(n % x === 0 && n % y ===0 ) {
 // return true } else {
 // return false
 // }
 // }
+
+//online method
+
+// const isDivisible = (n, x, y) => n%x==0 && n%y==0;
+
+//personal method
 
 const isDivisible = (n, x, y) => (n % x === 0 && n % y === 0 ? true : false);
 
