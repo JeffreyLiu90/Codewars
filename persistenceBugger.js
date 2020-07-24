@@ -1,40 +1,36 @@
 function persistence(num) {
-  let final = 0;
+  // change the number into a string and
+  // split the number into individual numbers.
+  var numArray = num.toString().split("");
 
-  let result = 1;
-  let num1 = num.toString();
-  let number = num1.split("");
-  console.log("number", number);
+  // Initialize a count variable to count its
+  // multiplicative persistence.
+  let count = 0;
 
-  for (let i = 0; i < number.length; i++) {
-    result *= number[i];
+  // Initialize a total variable.
+  let total;
+
+  // While loop to make function run only when the split
+  // number has more than 1 element.
+  while (numArray.length > 1) {
+    // Set the total variable equal to the reduce function
+    // which gets the sum and gets multiplied by the current
+    // value in the loop.
+    total = numArray.reduce(function(sum, currentValue) {
+      return sum * currentValue;
+    });
+
+    // Increment the count variable
+    count++;
+
+    //split the new number and reset the function.
+    numArray = total.toString().split("");
   }
 
-  let stringResult = result.toString().split("");
-
-  if (stringResult.length === 1) {
-    return result;
-  } else {
-    for (let j = 0; j < stringResult.length; j++) {
-      result = 0;
-      result *= stringResult[j];
-    }
-  }
-
-  console.log("result.length", result.toString().split("").length);
-
-  return result;
-
-  // if (result.length === 1) {
-  //   console.log("heyy");
-  //   return result;
-  // } else {
-  //   for (let j = 0; j < result.length; j++) {
-  //     result = 0;
-  //     result *= j;
-  //   }
-  // }
-  // return result;
+  // If the new number is no longer greater than 1,
+  // then that means we reached the end.
+  // Return the count.
+  return count;
 }
 
 console.log(persistence(39));

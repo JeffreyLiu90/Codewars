@@ -1,5 +1,6 @@
-var a = ["dog", "cat", "hen"];
+// var a = ["dog", "cat", "hen"];
 
-a[100] = "fox";
+// a[100] = "fox";
 
-console.log([] == []);
+// console.log([] == []);
+Sum();
