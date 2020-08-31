@@ -22,3 +22,9 @@ const findMissingLetter = arr => {
 console.log(findMissingLetter(["a", "b", "d", "e"]));
 
 // Online answers
+
+function findMissingLetter(array) {
+  var i = array[0].charCodeAt();
+  array.map(x => (x.charCodeAt() == i ? i++ : i));
+  return String.fromCharCode(i);
+}
